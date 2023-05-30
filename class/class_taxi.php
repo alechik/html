@@ -158,7 +158,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     
-    include_once 'db.php';
+    include_once '../db/db.php';
     
     class TaxiClass extends Database {  
         private $table_name = "taxi"; // Nombre de la tabla
