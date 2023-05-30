@@ -24,16 +24,16 @@ function llenarTabla(data) {
     for (let i = 0; i < data.length; i++) {
         document.querySelector('#table-taxi tbody').innerHTML +=
             `<tr>
-            <td>${data[i].id}</td>
-            <td>${data[i].marca}</td>
-            <td>${data[i].modelo}</td>
-            <td>${data[i].anio}</td>
-            <td>${data[i].color}</td>
-            <td>${data[i].conductor}</td>
-            <td>${data[i].ubicacion}</td>
-            <td><button type="button" onclick="deleteTaxi(${data[i].id})">Delete</button>
-            <button type="button" onclick="updateTaxi(${data[i].id})">Update</button> 
-            <button type="button" onclick="readTaxiById(${data[i].id})">Read</button> </td>
+            <td>${data[i].taxi_id}</td>
+            <td>${data[i].taxi_marca}</td>
+            <td>${data[i].taxi_modelo}</td>
+            <td>${data[i].taxi_anio}</td>
+            <td>${data[i].taxi_color}</td>
+            <td>${data[i].taxi_conductor}</td>
+            <td>${data[i].taxi_ubicacion}</td>
+            <td><button type="button" onclick="deleteTaxi(${data[i].taxi_id})">Delete</button>
+            <button type="button" onclick="updateTaxi(${data[i].taxi_id})">Update</button> 
+            <button type="button" onclick="readTaxiById(${data[i].taxi_id})">Read</button> </td>
         </tr>`
     }
 }
@@ -121,12 +121,12 @@ function readTaxiById(id) {
         responseType: 'json'
     }).then(res => {
         console.log(res.data);
-        document.getElementById('marca').value = res.data.data[0].marca;
-        document.getElementById('modelo').value = res.data.data[0].modelo;
-        document.getElementById('anio').value = res.data.data[0].anio;
-        document.getElementById('color').value = res.data.data[0].color;
-        document.getElementById('conductor').value = res.data.data[0].conductor;
-        document.getElementById('ubicacion').value = res.data.data[0].ubicacion;
+        document.getElementById('marca').value = res.data.data[0].taxi_marca;
+        document.getElementById('modelo').value = res.data.data[0].taxi_modelo;
+        document.getElementById('anio').value = res.data.data[0].taxi_anio;
+        document.getElementById('color').value = res.data.data[0].taxi_color;
+        document.getElementById('conductor').value = res.data.data[0].taxi_conductor;
+        document.getElementById('ubicacion').value = res.data.data[0].taxi_ubicacion;
     }).catch(error => {
         console.error(error);
     });
