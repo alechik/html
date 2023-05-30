@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/taxi.js"></script>
+    <title>Taxi Form</title>
+</head>
+
+<body onload="readAllTaxis()">
+    Marca: <input id="marca" type="text" placeholder="marca"><br>
+    Modelo: <input id="modelo" type="text" placeholder="modelo"><br>
+    Año: <input id="anio" type="text" placeholder="año"><br>
+    Color: <input id="color" type="text" placeholder="color"><br>
+    Conductor: <input id="conductor" type="text" placeholder="conductor"><br>
+    Ubicación: <input id="ubicacion" type="text" placeholder="ubicación"><br>
+
+    <button type="button" onclick="createTaxi();">Guardar</button>
+
+    <table id="table-taxi" border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Año</th>
+                <th>Color</th>
+                <th>Conductor</th>
+                <th>Ubicación</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+
+</html>
+
+
