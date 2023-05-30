@@ -56,14 +56,36 @@ function deleteTaxi(id_del) {
 }
 
 function createTaxi() {
+
+
+    let marca = document.getElementById('marca').value
+    let modelo = document.getElementById('modelo').value
+    let anio = document.getElementById('anio').value
+    let color = document.getElementById('color').value
+    let conductor = document.getElementById('conductor').value
+    let ubicacion = document.getElementById('ubicacion').value
+
     let taxi = {
-        marca: document.getElementById('marca').value,
-        modelo: document.getElementById('modelo').value,
-        anio: document.getElementById('anio').value,
-        color: document.getElementById('color').value,
-        conductor: document.getElementById('conductor').value,
-        ubicacion: document.getElementById('ubicacion').value
+        marca: marca,
+        modelo: modelo,
+        anio: anio,
+        color: color,
+        conductor: conductor,
+        ubicacion: ubicacion
     };
+
+    let isValid = true;
+
+    Object.keys(taxi).forEach((key) => {
+        if (!taxi[key]) {
+            isValid = false;
+            console.error(`El campo ${key} es obligatorio.`);
+        }
+    });
+
+    if (isValid) {
+        console.log("El objeto taxi es válido. Realizar acciones adicionales aquí.");
+    }
 
     axios({
         method: 'POST',
