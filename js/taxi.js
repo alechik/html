@@ -80,6 +80,8 @@ function createTaxi() {
         if (!taxi[key]) {
             isValid = false;
             console.error(`El campo ${key} es obligatorio.`);
+            alert(`El campo ${key} es obligatorio.`);
+            return;
         }
     });
 
